@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'^$', views.homepage),
 
     #adopcion
-    url(r'^FormularioAdopcion/',include('adopcion.urls')),
+    url(r'^FormularioAdopcion/',include('adopcion.urls', namespace='adopcion')),
 
 ]
 
