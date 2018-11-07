@@ -10,6 +10,7 @@
     <Body>
         <H1><a href="{% url 'adopcion:rescatadosListar' %}">Listar</a></H1>
         <h1>Formulario Adopcion Listar</h1>
+        <button><a href="{% url 'homepage' %}">Inicio</a></button>
         <div class="FormAdopAll">
                 {% for FormularioRescatados in FormResAll %} <!--le da a variable html variable de la bd -->
             <div class="FormularioRescatados">

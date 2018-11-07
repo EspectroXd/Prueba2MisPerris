@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^cuentas/', include('cuentas.urls')),
     url(r'^formularioAdopcion/', include('adopcion.urls')),
     url(r'^about/$', views.about),
-     url(r'^base/$', views.base),
+    url(r'^base/$', views.base),
     url(r'^$', views.homepage, name="homepage"),
  
 ]

@@ -28,6 +28,8 @@
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#contactanos">Contáctanos</a></li>
       <li><a href="{% url 'adopcion:adoptadosCrear' %}">Formulario adopción</a></li>
+      <li><a href="http://127.0.0.1:8000/admin/login/?next=/admin/">SuperUser</a></li>
+      <li><a href="{% url 'adopcion:rescatadosListar' %}">Perritos</a></li>
       <li><a href="{% url 'cuentas:signup' %}">Registrarse</a></li>
       <li><a href="{% url 'cuentas:login' %}">Iniciar sesion</a></li>
       <li>
@@ -45,9 +47,17 @@
       <li><a href="#quienessomos">Quienes somos</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#contactanos">Contáctanos</a></li>
-      <li><a href="FormPerris.html">Formulario adopción</a></li>
+      <li><a href="{% url 'adopcion:adoptadosCrear' %}">Formulario adopción</a></li>
+      <li><a href="http://127.0.0.1:8000/admin/login/?next=/admin/">SuperUser</a></li>
+      <li><a href="{% url 'cuentas:signup' %}">Perritos</a></li>
       <li><a href="{% url 'cuentas:signup' %}">Registrarse</a></li>
       <li><a href="{% url 'cuentas:login' %}">Iniciar sesion</a></li>
+      <li>
+          <form class="logout-link" action="{% url 'cuentas:logout'%}" method="POST">
+              {%csrf_token%}
+              <button class="waves-effect waves-light btn" type="submit">Cerrar sesion</button>
+          </form>
+      </li>
     </ul>
       
       <div id="espacio">

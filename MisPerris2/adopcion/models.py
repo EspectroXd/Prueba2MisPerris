@@ -53,7 +53,7 @@ class FormularioAdopcion(models.Model):
     fechaNac = models.DateTimeField(default=timezone.now)
     region = models.CharField(max_length=60, choices = REGION_CHOICES ,help_text="region")
     ciudad = models.CharField(max_length=60, choices = CIUDAD_CHOICES , help_text="ciudad")
-    tipoVivienda = models.CharField(max_length=60, choices = VIVIENDA_CHOICES , help_text="vivienda")
+    tipoVivienda = models.CharField(max_length=60, choices = VIVIENDA_CHOICES , help_text="vivienda") 
     autor = models.ForeignKey(User,on_delete=models.CASCADE,default=None)
 
     def __str__(self):
