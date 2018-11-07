@@ -27,18 +27,28 @@
       <li><a href="#quienessomos">Quienes somos</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#contactanos">Contáctanos</a></li>
-      <li><a href="FormPerris.html">Formulario adopción</a></li>
+      <li><a href="{% url 'adopcion:adoptadosCrear' %}">Formulario adopción</a></li>
+      <li><a href="{% url 'cuentas:signup' %}">Registrarse</a></li>
+      <li><a href="{% url 'cuentas:login' %}">Iniciar sesion</a></li>
+      <li>
+          <form class="logout-link" action="{% url 'cuentas:logout'%}" method="POST">
+              {%csrf_token%}
+              <button class="waves-effect waves-light btn" type="submit">Cerrar sesion</button>
+          </form>
+      </li>
     </ul>
   </div>
 </nav>
 
-  <ul class="sidenav" id="mobile-demo" >
-      <li><a href="inicio.html">Inicio</a></li>
-      <li><a href="quienessomos.html">Quienes somos</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="contactanos.html">Contáctanos</a></li>
+    <ul class="sidenav" id="mobile-demo" >
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#quienessomos">Quienes somos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contactanos">Contáctanos</a></li>
       <li><a href="FormPerris.html">Formulario adopción</a></li>
-</ul>
+      <li><a href="{% url 'cuentas:signup' %}">Registrarse</a></li>
+      <li><a href="{% url 'cuentas:login' %}">Iniciar sesion</a></li>
+    </ul>
       
       <div id="espacio">
               <div id="carousel" class="carousel carousel-slider">

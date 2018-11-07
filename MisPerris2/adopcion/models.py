@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 class FormularioAdopcion(models.Model):
     REGION_CHOICES = (
@@ -53,6 +54,21 @@ class FormularioAdopcion(models.Model):
     region = models.CharField(max_length=60, choices = REGION_CHOICES ,help_text="region")
     ciudad = models.CharField(max_length=60, choices = CIUDAD_CHOICES , help_text="ciudad")
     tipoVivienda = models.CharField(max_length=60, choices = VIVIENDA_CHOICES , help_text="vivienda")
+    autor = models.ForeignKey(User,on_delete=models.CASCADE,default=None)
 
     def __str__(self):
         return self.rut
+
+class FormularioRescatado(models.Model):
+
+    ESTADO_CHOICES = (
+        ('Rescatado','Rescatado'),
+        ('Disponible','Disponible'),
+        ('Adoptado','Adoptado'),
+    )
+
+    fotografia = models.ImageField(default='default.png', blank=True)
+    nombre = models.CharField(max_length=50)
+    razaPredominante = models.CharField(max_length=50)
+    descripcion = models.TextField()
+    estado = models.CharField(max_length=50, choices = ESTADO_CHOICES ,help_text="Estado")

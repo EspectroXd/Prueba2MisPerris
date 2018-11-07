@@ -8,13 +8,14 @@
         <link rel="stylesheet" href="{% static 'estilos.css' %}">
     </head>
     <Body>
+        <H1><a href="{% url 'adopcion:adoptadosListar' %}">Listar</a></H1>
         <h1>Formulario Adopcion Listar</h1>
         <div class="FormAdopAll">
                 {% for FormularioAdopcion in FormAdopAll %} <!--le da a variable html variable de la bd -->
             <div class="FormularioAdopcion">
                 <table>
                         <tr>
-                                <th>id</th><br>
+                                <th>id</th>
                                 <th>rut</th>
                                 <th>nombre</th>
                                 <th>Fecha Nacimiento</th>
@@ -24,11 +25,11 @@
                                 <th>Tipo Vivienda</th>
                         </tr>
                     <tr>
-                        <td>{{FormularioAdopcion.id}}</td><br>
+                        <td>{{FormularioAdopcion.id}}</td>
                         <td>{{FormularioAdopcion.rut}}</td>
                         <td>{{FormularioAdopcion.nombre}}</td>
                         <td>{{FormularioAdopcion.fechaNac}}</td>
-                        <td>{{FormularioAdopcion.snippet}}</td>
+                        <td>{{FormularioAdopcion.correo}}</td>
                         <td>{{FormularioAdopcion.region}}</td>
                         <td>{{FormularioAdopcion.ciudad}}</td>
                         <td>{{FormularioAdopcion.tipoVivienda}}</td>
