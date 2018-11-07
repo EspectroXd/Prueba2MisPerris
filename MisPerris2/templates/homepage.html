@@ -1,10 +1,115 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>home</title>
-    </head>
-    <Body>
-        <h1>home</h1>
-    </Body>
+<html lang="es">
+  <head>
+      <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'estilos.css' %}"  media="screen,projection"/>
+      <title>Mis Perris </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+      
+      <header>
+      <center>
+      <div class="inicio" id="inicio">
+           <img class="responsive-img" src="{% static 'image/logo.png' %}" alt="LogoMisPerris" width = "80%">
+      </div>
+      </center>
+      </header>
+      
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="left hide-on-med-and-down">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#quienessomos">Quienes somos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#contactanos">Contáctanos</a></li>
+      <li><a href="FormPerris.html">Formulario adopción</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <ul class="sidenav" id="mobile-demo" >
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="quienessomos.html">Quienes somos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contactanos.html">Contáctanos</a></li>
+      <li><a href="FormPerris.html">Formulario adopción</a></li>
+</ul>
+      
+      <div id="espacio">
+              <div id="carousel" class="carousel carousel-slider">
+                  <a class="carousel-item" href="#one!"><img id="ImagenCarrusel" src="{% static 'adoptados/Apolo.jpg' %}"></a>
+                  <a class="carousel-item" href="#two!"><img id="ImagenCarrusel" src="{% static 'adoptados/Duque.jpg' %}"></a>
+                  <a class="carousel-item" href="#three!"><img id="ImagenCarrusel" src="{% static 'adoptados/Tom.jpg' %}"></a>
+                  <a class="carousel-item" href="#four!"><img id="ImagenCarrusel" src="{% static 'image/4.jpg' %}"></a>
+                  <a class="carousel-item" href="#five!"><img id="ImagenCarrusel" src="{% static 'image/5.jpg' %}"></a>
+              </div>
+              
+              
+              <center>
+              <div class="redesSociales" id="contactanos">
+                  <div class="circle button">
+                      <a href="https://es-la.facebook.com/" ><img src= "{% static 'image/facebook.png' %}" width="10%"></a>
+                      <a href="https://plus.google.com/discover?hl=es" ><img src= "{% static 'image/google+.png' %}" width="10%"></a>
+                      <a href="https://www.instagram.com/?hl=es-la" ><img src= "{% static 'image/instagram.png' %}" width="10%"></a>
+                      <a href="https://accounts.google.com/" ><img src= "{% static 'image/email.png' %}" width="10%"></a>
+                  </div>
+              </div>
+              </center>
+              </div>
+              
+
+      <section class="section1" id="quienessomos">
+      
+      <h2 align=right><font face=tahoma ><b>RESCATE</b></font></h2>
+      <h4 align=right><font face=tahoma color=grey >ETAPA UNO</font></h4>
+      <hr size=20 width=10% align=right>
+      <br>
+      <p align=right><font size=6 font=tahoma>Rescatamos perros en situación de peligro y/o abandono.Los rehabilitamos y los preparamos para buscarles un hogar.</font></p>
+      <img src= "{% static 'image/rescate.jpg' %}" alt="Rescate" width="50%" align= "right">
+      
+      </section>
+      
+      <img src= "{% static 'image/crowfunding.jpg' %}" alt="crowfunding" width="50%" align= "left">
+
+      <section class="section2" id="servicios">
+
+      <h2 align=left><font face=tahoma ><b>CROWFUNDING</b></font></h2>
+      <h4 align=left><font face=tahoma color=grey >FINANCIAMIENTO</font></h4>
+      <hr size=20 width=10% align=left>
+      <br>
+      <p align=left><font size=6 font=tahoma>Sigue nuestras redes sociales para informarte acerca de las diversas campañas y actividades que realizamos para obtener financiamiento para seguir ayudando.</font></p>
+      <br>
+              <div class="button" id="button1">	
+              <a href="campañas.html" ><font color="black" face="tahoma"><b>CAMPAÑAS</b></font></a>
+              </div>
+      </section>
+      
+      <section class="section3">
+      
+
+      </section>
+      
+      <footer>
+      
+      <h4> Desarrollo Web y Mobile </h4>
+      
+      </footer>
+      
+      
+      
+    
+      <script type="text/javascript" src="{% static 'materialize.min.js' %}""></script>
+      <script> M.AutoInit(); </script>
+      <script>   
+              $('.carousel.carousel-slider').carousel({
+              fullWidth: true
+              }); 
+      </script>
+      
+  </body>
 </html>

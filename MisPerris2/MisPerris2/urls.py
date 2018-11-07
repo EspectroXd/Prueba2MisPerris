@@ -1,16 +1,18 @@
 from django.contrib import admin
 from django.conf.urls import url, include
 from . import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^about/$', views.about),
     url(r'^$', views.homepage),
 
     #adopcion
-    url(r'^FormularioAdopcion/',include('adopcion.urls', namespace='adopcion')),
+    url(r'^FormularioAdopcion/', include('adopcion.urls')),
 
 ]
 
+urlpatterns += staticfiles_urlpatterns()
 #cada vez se configura algo de la tabla o BD
 #python manage.py makemigrations
 #pythons manage.py migrate
