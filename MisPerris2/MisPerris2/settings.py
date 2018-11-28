@@ -25,7 +25,11 @@ SECRET_KEY = '^*qb&aed_40z#r)6ii&s#1(_0((@^pp)rv=ezc#*no3y@%ltnq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'misperris.com',
+    '127.0.0.1',
+    'localhost',
+]
 
 
 # Application definition
@@ -39,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'adopcion',
     'cuentas',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'MisPerris2.urls'
@@ -64,6 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -128,3 +136,15 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+AUTHENTICAION_BACKENDS = [
+    'social_core_backends.google.GoogleOAuth2',
+    'social_core_backends.facebook.FacebookOAuth2',
+    'social_core_backends.instagram.InstagramOAuth2',
+    'social_core_backends.github.GithubOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+LOGIN_REDIRECT_URL = 'post_list'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '304839474632-pip6ftfeb51616qsn06h344n7td484sd.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'TBe-xP6bUDU6VXXm_ioezTGO'

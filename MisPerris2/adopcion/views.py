@@ -10,6 +10,7 @@ def Formulario_adopcion_Listar(request):
 @login_required(login_url="/cuentas/login/")
 def Formulario_rescatados_Listar(request):
     FormResAll = FormularioRescatado.objects.all().order_by('nombre')
+    #FormResAll = FormularioRescatado.filter(nombre=request.nombre)
     return render(request,'adopcion/Rescate_listar.html', {'FormResAll':FormResAll})
 
 @login_required(login_url="/cuentas/login/")
@@ -19,6 +20,7 @@ def Formulario_adopcion_Crear(request):
         if form.is_valid():
             instance = form.save(commit=False)
             instance.autor = request.user
+            #intance.FormularioAdopcion.nombre=request.nombre; iguala la variable bd a la variable html
             instance.save()
             return redirect('homepage')
 

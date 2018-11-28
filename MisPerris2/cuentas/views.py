@@ -33,3 +33,6 @@ def logout_view(request):
     if request.method=='POST':
         logout(request)
         return redirect('homepage')
+
+def index(request):
+    return render(request, 'cuentas/login.html')
