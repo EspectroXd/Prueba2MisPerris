@@ -11,10 +11,10 @@ urlpatterns = [
     url(r'^cuentas/', include('cuentas.urls')),
     url(r'^formularioAdopcion/', include('adopcion.urls')),
     url(r'^about/$', views.about),
-    url(r'^base/$', views.base),
+    url(r'^Home/$', views.Home, name="Home"),
     url(r'^$', views.homepage, name="homepage"),
-    url(r'^', include('django.contrib.auth.urls')),
-    url(r'^oauth/', include('social_django.urls',namespace="social")),
+    #url(r'^', include('django.contrib.auth.urls')),
+    #url(r'^oauth/', include('social_django.urls',namespace="social")),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

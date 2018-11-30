@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
+    <style type="text/css">
+        h1{text-align: center;}
+        body{background : #6dccaa;}
+        #loginSocial{color: blue; font-size: "4";}
+        #btnGoogle{color: white;background-color: red; height: 50px;}
+        #btnGithub{color: white;background-color: black;height: 50px;}
+        #btnFacebook{color: white;background-color: blue;height: 50px;}
+        #btnInstagram{color: white;background-color: #8a3ab9;height: 50px;}
+    </style>
 </head>
 <body>
     <h1>Login</h1>
-    <form  class="site-form" action="{% url 'cuentas:login' %}" method="POST">
+    
+    <form  id="login-perris" class="site-form" action="{% url 'cuentas:login' %}" method="POST">
         {% csrf_token %}
         {{ form }}
         {% if request.GET.next %}
@@ -17,16 +27,24 @@
         <input type="submit" value="Login">
 
     </form>
-    <p>Login Social</p>
+    <p id="loginSocial">Login Social</p>
 
-    <a href="{% url 'social:begin' 'github' %}">
-        <button type="button" name="button">Github</button>
+    <a href="{% url 'cuentas:social:begin' 'github' %}">
+        <button id="btnGithub" type="button" name="button">Github</button>
     </a>
-    <a href="{% url 'social:begin' 'google-oauth2' %}">
-        <button type="button" name="button">Google</button>
+    <a href="{% url 'cuentas:social:begin' 'google-oauth2' %}">
+        <button id="btnGoogle" type="button" name="button">Google</button>
     </a>
-    
-
-    <button><a href="{% url 'homepage' %}">Inicio</a></button>
+    <a href="{% url 'cuentas:social:begin' 'facebook' %}">
+        <button id="btnFacebook" type="button" name="button">Facebook</button>
+    </a>
+    <a href="{% url 'cuentas:social:begin' 'instagream' %}">
+        <button id="btnInstagram" type="button" name="button">Instagram</button>
+    </a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button id="btnInicio"><a href="{% url 'homepage' %}">Inicio</a></button>
 </body>
 </html>

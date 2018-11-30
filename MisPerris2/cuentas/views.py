@@ -24,7 +24,7 @@ def login_view(request):
             if 'next' in request.POST:
                 return redirect(request.POST.get('next'))
             else:
-                return redirect('homepage')
+                return redirect('Home')
     else:
         form = AuthenticationForm()
     return render(request,'cuentas/login.html', {'form':form})

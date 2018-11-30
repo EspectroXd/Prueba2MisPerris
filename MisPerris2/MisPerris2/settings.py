@@ -129,22 +129,24 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
+STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'estaticos'),
-)
+]
 
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-AUTHENTICAION_BACKENDS = [
-    'social_core_backends.google.GoogleOAuth2',
-    'social_core_backends.facebook.FacebookOAuth2',
-    'social_core_backends.instagram.InstagramOAuth2',
-    'social_core_backends.github.GithubOAuth2',
+AUTHENTICAION_BACKENDS = [ 
+    'social_core.backends.google.GoogleOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.instagram.InstagramOAuth2',
+    'social_core.backends.github.GithubOAuth2',
+
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-LOGIN_REDIRECT_URL = 'post_list'
+LOGIN_REDIRECT_URL = 'Home'
+SOCIAL_AUTH_URL_NAMESPACE = 'cuentas:social'
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '304839474632-pip6ftfeb51616qsn06h344n7td484sd.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'TBe-xP6bUDU6VXXm_ioezTGO'
